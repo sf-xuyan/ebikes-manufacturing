@@ -63,10 +63,9 @@ async function start() {
         const eventData = {
             CreatedDate: Date.now(),
             CreatedById: sfClient.client.userInfo.id,
-            Order_Id__c: orderId,
-            Status__c: status
+            Order_Id__c: { string: orderId },
+            Status__c: { string: status }
         };
-        console.log('before publish', eventData);
         await pubSub.publish(
             MANUFACTURING_PE_TOPIC,
             manufacturingPeSchema,
