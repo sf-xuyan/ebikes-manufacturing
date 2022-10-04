@@ -66,6 +66,7 @@ async function start() {
             Order_Id__c: orderId,
             Status__c: status
         };
+        console.log('before publish', eventData);
         await pubSub.publish(
             MANUFACTURING_PE_TOPIC,
             manufacturingPeSchema,
