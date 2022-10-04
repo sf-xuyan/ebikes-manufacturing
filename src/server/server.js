@@ -63,8 +63,8 @@ async function start() {
         const eventData = {
             CreatedDate: Date.now(),
             CreatedById: sfClient.client.userInfo.id,
-            Order_Id__c: { string: orderId },
-            Status__c: { string: status }
+            Order_Id__c: orderId,
+            Status__c: status
         };
         await pubSub.publish(
             MANUFACTURING_PE_TOPIC,
