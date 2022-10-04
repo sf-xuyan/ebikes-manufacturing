@@ -26,6 +26,7 @@ export default class OrderCard extends LightningElement {
 
         const { status } = event.currentTarget.dataset;
         const eventData = { detail: { orderId: this.orderId, status } };
+        console.log(eventData);
         this.dispatchEvent(new CustomEvent('statuschange', eventData));
     }
 }
